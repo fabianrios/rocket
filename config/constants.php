@@ -1,7 +1,7 @@
 <?php
 //CONFIG
 define ("TESTMODE", true);				//CONFIGURED FOR STAGING OR PRODUCTION
-define ("DEBUG", false);		
+define ("DEBUG", true);		
 define ("DEBUG_VISIBLE", true);		// ?
 define ("APPLICATION_LOCALE", "es");	// SET APPLICATION LOCALE 
 define ("APPLICATION_NAME", "Rocket"); 	//APPLICATION NAME
@@ -23,10 +23,10 @@ if (TESTMODE)
 	define ("APPLICATION_FULL_URL", "http://190.145.56.83/buho_private/"); 
 	define ("APPLICATION_HOST_URL", "http://190.145.56.83/");
 	//LOCALHOST
-	define ("DB_NAME", "buho");
-	define ("DB_HOST", "localhost"); 
-	define ("DB_USER", "root"); 
-	define ("DB_PASSWORD", "mmcrew");
+	define ("DB_NAME", "staging");
+	define ("DB_HOST", "107.20.228.20"); 
+	define ("DB_USER", "buho_user"); 
+	define ("DB_PASSWORD", "buh0pass$1");
 }
 else 
 {

@@ -134,7 +134,7 @@ class TCreditosValue
 			break;	
 			case 'cupo':
 				$this->filter['cupo'] = " AND filtro_monto_minimo > ".intval(str_replace(".", "", $value1));
-				$this->filter['cupo'] .= " AND (filtro_monto_maximo = 0 OR filtro_monto_maximo < ". intval(str_replace(".", "", $value1)) . ")";
+				$this->filter['cupo'] .= " AND (filtro_monto_maximo = 0 OR filtro_monto_maximo > ". intval(str_replace(".", "", $value1)) . ")";
 			break;
 			default:
 			
