@@ -1,0 +1,4 @@
+RewriteEngine on
+RewriteCond %{REQUEST_URI} !^/?montana/
+RewriteCond %{REQUEST_URI} !^/?capre/montana/
+RewriteRule ^(.+).html index.php?$1 [nc]

@@ -1,0 +1,292 @@
+div.pie-wrapper {
+    height: 400px;
+    margin: 0 auto;
+    position: relative;
+    width: 520px;
+}
+div.pie-wrapper div.pie {
+    height: 400px;
+    left: 50px;
+    overflow: hidden;
+    position: absolute;
+    top: -45px;
+    width: 400px;
+    z-index: 9;
+}
+div.pie-wrapper ul.labels {
+    height: 400px;
+    margin: 0;
+    padding: 0;
+    width: 520px;
+}
+div.pie-wrapper ul.labels li {
+    list-style: none outside none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    text-transform: uppercase;
+}
+div.pie-wrapper ul.labels li strong {
+    display: block;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: bold;
+    line-height: 24px;
+}
+div.pie-wrapper ul.labels li span {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 20px;
+}
+div.pie-wrapper ul.labels li.nerd {
+    background: url("../img/ico-nerd.png") no-repeat scroll 100% 0 transparent;
+    color: #584528;
+    left: 190px;
+    position: absolute;
+    top: 0;
+    width: 110px;
+    z-index: 8;
+}
+div.pie-wrapper ul.labels li.music {
+    background: url("../img/ico-music.png") no-repeat scroll 100% 0 transparent;
+    color: #005293;
+    left: 350px;
+    position: absolute;
+    top: 40px;
+    width: 110px;
+    z-index: 8;
+}
+div.pie-wrapper ul.labels li.sports {
+    background: url("../img/ico-sports.png") no-repeat scroll 100% 0 transparent;
+    color: #FF7000;
+    position: absolute;
+    right: 0;
+    top: 150px;
+    width: 130px;
+    z-index: 8;
+}
+div.pie-wrapper ul.labels li.community {
+    background: url("../img/ico-community.png") no-repeat scroll 70% 0 transparent;
+    bottom: 40px;
+    color: #FED100;
+    padding: 10px 0 0;
+    position: absolute;
+    right: 80px;
+    width: 110px;
+    z-index: 8;
+}
+div.pie-wrapper ul.labels li.family {
+    background: url("../img/ico-family.png") no-repeat scroll 100% 10px transparent;
+    bottom: 40px;
+    color: #34B6E4;
+    left: 0;
+    padding: 0 60px 0 0;
+    position: absolute;
+    text-align: right;
+    width: 110px;
+    z-index: 8;
+}
+div.pie-wrapper ul.labels li.social {
+    background: url("../img/ico-social-butterfly.png") no-repeat scroll 0 0 transparent;
+    color: #B6BF00;
+    left: 10px;
+    padding: 0 0 0 20px;
+    position: absolute;
+    text-align: right;
+    top: 80px;
+    width: 110px;
+    z-index: 8;
+}
+div.pie-wrapper ul.labels li.item-Nerd {
+    background: url("../img/ico-nerd-anim.gif") no-repeat scroll 7px -207px transparent;
+    color: #584528;
+    height: 66px;
+    left: 120px;
+    position: absolute;
+    top: 10px;
+    z-index: 8;
+}
+div.pie-wrapper ul.labels li.item-MusicCulture {
+    background: url("../img/ico-music-anim.gif") no-repeat scroll 20px -204px transparent;
+    color: #005293;
+    height: 66px;
+    left: 320px;
+    position: absolute;
+    top: 20px;
+    z-index: 8;
+}
+div.pie-wrapper ul.labels li.item-Sports {
+    background: url("../img/ico-sports-anim.gif") no-repeat scroll 24px -207px transparent;
+    color: #FF7000;
+    height: 86px;
+    position: absolute;
+    right: -15px;
+    top: 170px;
+    width: 130px;
+    z-index: 8;
+}
+div.pie-wrapper ul.labels li.item-Community {
+    background: url("../img/ico-community-anim.gif") no-repeat scroll 12px -208px transparent;
+    bottom: 0;
+    color: #FED100;
+    height: 63px;
+    padding: 10px 0 0;
+    position: absolute;
+    right: 90px;
+    width: 110px;
+    z-index: 8;
+}
+div.pie-wrapper ul.labels li.item-Family {
+    background: url("../img/ico-family-anim.gif") no-repeat scroll 68px -188px transparent;
+    bottom: 24px;
+    color: #34B6E4;
+    height: 70px;
+    left: 0;
+    padding: 0 60px 0 0;
+    position: absolute;
+    text-align: right;
+    width: 110px;
+    z-index: 8;
+}
+div.pie-wrapper ul.labels li.item-Social {
+    background: url("../img/ico-social-butterfly.gif") no-repeat scroll -38px -213px transparent;
+    color: #B6BF00;
+    height: 66px;
+    left: -32px;
+    padding: 0 0 0 20px;
+    position: absolute;
+    text-align: right;
+    top: 164px;
+    width: 120px;
+    z-index: 8;
+}
+div.pie-wrapper ul.ie {
+    position: relative;
+    z-index: 10;
+}
+div.pie-wrapper ul.labels li {
+    position: relative;
+}
+div.pie-wrapper ul.ie a {
+    display: block;
+    text-align: center;
+}
+div.pie-wrapper ul.ie li.nerd, div.pie-wrapper ul.ie li.item-Nerd {
+    width: 135px;
+}
+div.pie-wrapper ul.ie li.music, div.pie-wrapper ul.ie li.item-MusicCulture {
+    width: 110px;
+}
+div.pie-wrapper ul.ie li.sports, div.pie-wrapper ul.ie li.item-Sports {
+    width: 130px;
+}
+div.pie-wrapper ul.ie li.community, div.pie-wrapper ul.ie li.item-Community {
+    bottom: 20px;
+    right: 40px;
+    width: 160px;
+}
+div.pie-wrapper ul.ie li.family, div.pie-wrapper ul.ie li.item-Family {
+    width: 110px;
+}
+div.pie-wrapper ul.ie li.social, div.pie-wrapper ul.ie li.item-Social {
+    left: -40px;
+    width: 130px;
+}
+div.pie-wrapper ul.ie a.minus {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 20px;
+    padding: 2px 5px;
+    position: absolute;
+    text-decoration: none;
+    z-index: 9999;
+}
+div.pie-wrapper ul.ie li.nerd a.minus, div.pie-wrapper ul.ie li.item-Nerd a.minus {
+    color: #584528;
+    left: 0;
+    top: 0;
+}
+div.pie-wrapper ul.ie li strong {
+    display: block;
+    margin-left: 17px;
+}
+div.pie-wrapper ul.ie li.family strong, div.pie-wrapper ul.ie li.item-Family strong {
+    margin-right: 17px;
+}
+div.pie-wrapper ul.ie li.social strong, div.pie-wrapper ul.ie li.item-Social strong {
+    margin-right: 28px;
+}
+div.pie-wrapper ul.ie li.music a.minus, div.pie-wrapper ul.ie li.item-MusicCulture a.minus {
+    color: #005293;
+    left: 0;
+    top: 0;
+}
+div.pie-wrapper ul.ie li.sports a.minus, div.pie-wrapper ul.ie li.item-Sports a.minus {
+    color: #FF7000;
+    left: 0;
+    top: 0;
+}
+div.pie-wrapper ul.ie li.community a.minus, div.pie-wrapper ul.ie li.item-Community a.minus {
+    color: #FED100;
+    left: 0;
+    top: 10px;
+}
+div.pie-wrapper ul.ie li.family a.minus, div.pie-wrapper ul.ie li.item-Family a.minus {
+    color: #34B6E4;
+    left: 25px;
+    top: 0;
+}
+div.pie-wrapper ul.ie li.social a.minus, div.pie-wrapper ul.ie li.item-Social a.minus {
+    color: #B6BF00;
+    left: 53px;
+    top: 0;
+}
+div.pie-wrapper ul.ie a.plus {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 24px;
+    padding: 0 5px;
+    position: absolute;
+    text-decoration: none;
+    z-index: 9999;
+}
+div.pie-wrapper ul.ie li.nerd a.plus, div.pie-wrapper ul.ie li.item-Nerd a.plus {
+    color: #584528;
+    right: 48px;
+    top: 0;
+}
+div.pie-wrapper ul.ie li.music a.plus, div.pie-wrapper ul.ie li.item-MusicCulture a.plus {
+    color: #005293;
+    right: 22px;
+    top: 0;
+}
+div.pie-wrapper ul.ie li.sports a.plus, div.pie-wrapper ul.ie li.item-Sports a.plus {
+    color: #FF7000;
+    right: 42px;
+    top: 0;
+}
+div.pie-wrapper ul.ie li.community a.plus, div.pie-wrapper ul.ie li.item-Community a.plus {
+    color: #FED100;
+    right: 70px;
+    top: 10px;
+}
+div.pie-wrapper ul.ie li.family a.plus, div.pie-wrapper ul.ie li.item-Family a.plus {
+    color: #34B6E4;
+    right: 58px;
+    top: 0;
+}
+div.pie-wrapper ul.ie li.social a.plus, div.pie-wrapper ul.ie li.item-Social a.plus {
+    color: #B6BF00;
+    right: 8px;
+    top: 0;
+}
+.hide {
+    display: none;
+}
+.FormGroup {
+    clear: both;
+    padding: 10px;
+}

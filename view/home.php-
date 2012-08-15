@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+	
+<meta charset="utf-8" />
+
+	<!-- Set the viewport width to device width for mobile -->
+	<meta name="viewport" content="width=device-width" />
+
+	<title>Buho: La forma divertida de tener el control de tus finanzas</title>
+
+		<meta name="description" content="SITE DESCRIPTION" />
+		<meta name="keywords" content="SITE KEYWORDS" />
+		<meta name="copyright" content="SITE COPYRIGHT" />
+		<meta name="author" content="Metaphysic"/>
+		<meta name="Distribution" content="Global" />
+		<meta name="Rating" content="General" />
+		<meta name="Robots" content="INDEX,FOLLOW" />
+		<meta name="Revisit-after" content="90 Days" />
+  
+	<!-- Included CSS Files -->
+	<link rel="stylesheet" href="stylesheets/foundation.css">
+	<link rel="stylesheet" href="stylesheets/style.css" type="text/css" />
+	<link rel="stylesheet" href="stylesheets/jquery-ui-1.8.17.custom.css" type="text/css" />
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+	
+
+	<!--[if lt IE 9]>
+		<link rel="stylesheet" href="stylesheets/ie.css">
+	<![endif]-->
+
+
+	<!-- IE Fix for HTML5 Tags -->
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+</head>
+
+<body>
+
+
+<!--1. HEADER -->
+<?php	
+include_once('header.php');	
+?>
+<!--1. End HEADER -->
+	
+
+
+<!--2. MAIN-->
+<div id="main"> 
+	<div class="container principal clearfix"><!-- Container Padding 20px -->
+	
+
+
+		<!-- 2.2 Row: Content -->
+		<div class="row">
+			<div class="twelve columns"><!-- Main Panel Width -->
+				<div class="panel header-explorar"> <!-- panel -->
+					
+					<!-- Ribbon -->
+					<div class="ribbon">
+						<h2><span class="head-e"></span><strong>Inicio</strong></h2>
+						<img src="images/border.png" class="right border" width="12" height="44">
+					</div>
+					<!-- End Ribbon -->
+										
+					<div class="row">
+						<div class="metas-main">
+							<div class="six columns centered clearfix">
+							<div class="row">
+							<div class="six columns"><!-- Item 1 -->
+									<div class="img-main-metas">
+										<img src="images/metas-big.jpg" alt="metas-big" width="204" height="143" />
+									</div>
+									<div class="blue-shadow"></div>
+									<a href="metas-010.html" title=""><h4 class="text-center blue-text"><strong>Metas</strong></h4></a>
+								</div><!-- End Item 1 -->
+                                                            
+								<div class="six columns"><!-- Item 1 -->
+									<div class="img-main-metas">
+										<img src="images/descubra-big.jpg" alt="descubra-big" width="204" height="143" />
+									</div>
+									<div class="blue-shadow"></div>
+									<a href="descubra-010.html" title=""><h4 class="text-center blue-text"><strong>Descubra</strong></h4></a>
+								</div><!-- End Item 1 -->
+								
+	
+								
+								
+
+							</div>
+							</div>
+						</div>
+					</div>
+					
+
+				</div> <!-- END panel -->
+				<div class="blue-shadow"><img src="images/shadow.png" alt="" width="" height=""></div>
+
+			</div><!-- End Main Panel Width -->
+			
+
+			
+		</div>
+		<!-- 2.2 End Row: Content -->
+		
+		
+	</div><!-- END Container Padding 20px -->
+</div>
+<!--2. END MAIN--> 	
+
+<?php	
+include_once('footer.php');	
+?>
+
+<!-- Included JS Files -->
+	<script src="javascripts/jquery.min.js"></script>
+	<script src="javascripts/modernizr.foundation.js"></script>
+	<script src="javascripts/foundation.js"></script>
+	<script src="javascripts/app.js"></script>
+	<script type="text/javascript" src="javascripts/jquery-ui-1.8.17.custom.min.js"></script>
+	
+
+	
+		
+		
+</body>
+</html>

@@ -1,0 +1,272 @@
+<?php
+class Sueno
+{
+	protected $variables;
+	protected $salidas;
+	
+	public function __construct()
+	{
+		$this->variables 	= array();
+		$this->salidas		= array();
+	}
+	public function addFilter($filter, $value1, $value2 = false)
+	{
+		$this->variables[$filter] = $value1;	
+	}
+	
+	public function fv($r,$n,$p,$pv=0)
+	{
+	   $sum = $pv;
+	   for ( $i=0;$i<$n;$i++ )
+	   {
+		   $sum += $sum*$r + $p;
+	   }
+	   return $sum;
+	}
+
+	public function PV($rate, $nper, $pmt)
+	{
+		return $pmt / $rate * (1 - pow(1 + $rate, -$nper));
+	}
+	
+	public function PMT($i, $n, $p) 
+	{
+ 		return $i * $p * pow((1 + $i), $n) / (1 - pow((1 + $i), $n));
+	}
+
+	public function NPER($rate = 0, $pmt = 0, $pv = 0, $fv = 0, $type = 0) {
+
+
+		if (!is_null($rate) && $rate != 0) 
+		{
+		   	$totalIncomeFromFlow 		= ($pmt / $rate);
+			$sumOfPvAndPayment 			= (-$fv + $totalIncomeFromFlow);
+			$currentValueOfPvAndPayment = ($pv + $totalIncomeFromFlow);
+			
+			if (($sumOfPvAndPayment < 0) && ($currentValueOfPvAndPayment < 0)) 
+			{
+				$sumOfPvAndPayment 			= -$sumOfPvAndPayment;
+				$currentValueOfPvAndPayment = 0-$currentValueOfPvAndPayment;
+			}
+			else if (($sumOfPvAndPayment <= 0) || ($currentValueOfPvAndPayment <= 0)) 
+			{
+				return 0;
+			}
+			
+			$totalInterestRate = $sumOfPvAndPayment / $currentValueOfPvAndPayment;
+			return log($totalInterestRate) / log($rate + 1);
+			//return log(($pmt * (1 + $rate * $type) / $rate - $fv) / ($pv + $pmt * (1 + $rate * $type) / $rate)) / log(1 + $rate);
+		} 
+		else 
+		{
+			return (-$pv -$fv) / $pmt;
+		}
+	}	//	function NPER()
+	
+	public function nAhorro($CI, $P, $F, $TA, $TCDT, $INCRE)
+	{
+		
+		// DETERMINA EL NUMERO DE MESES QUE SE DEBE AHORRAR EN UNA RENTA DE PAGOS P Y UN VALOR INICIAL CI EN UN CDT
+		// HASTA ALCANZAR EL VALOR FALTANTE F
+		// CI CUOTA INICIAL
+		// P VALOR PAGO CUOTA
+		// F VALOR FALTANTE INICIAL
+		// TA TASA AHORRO RENTA
+		// TCDT TASA CDT PARA AHORRO FIJO
+		// INCRE FACTOR DE INCREMENTO DEL FALTANTE (INFLACIîN)
+		
+		$ACUM 	= 0;
+		$n 		= 0;
+		$DIF 	= -$F;
+		while ($DIF < 0)
+		{
+			$n = $n + 1;	 
+			if ($TA > 0)
+				$ACUM = $P * ( pow((1 + $TA), $n - 1) / $TA) + $CI * pow((1 + $TCDT), $n - 1);
+			else
+				$ACUM = $P * $n + $CI * pow((1 + $TCDT), $n - 1);
+			$DIF = $ACUM - $F * pow((1 + $INCRE),  $n);
+		}
+		
+		return $n;
+	}
+
+	public function calculate()
+	{
+		$max_pct_creditos							= new Dato(9);
+		$min_pct_ahorro								= new Dato(11);		
+		$this->variables['pct_gastos_no_credito'] 	= $this->variables['gastos_no_financieros'] /  $this->variables['ingresos_netos'];
+		$this->variables['pct_gastos_credito'] 		= $this->variables['gastos_financieros'] /  $this->variables['ingresos_netos'];
+		$this->variables['pct_gastos'] 				= $this->variables['pct_gastos_no_credito'] + $this->variables['pct_gastos_credito'];
+		$tempArray									= array($max_pct_creditos->__get('dato_valor'), 1-$this->variables['pct_gastos_credito'] - $min_pct_ahorro->__get('dato_valor')); 
+		$this->variables['pct_maximo_creditos'] 	= MIN($tempArray);
+		$tempArray									= array($this->variables['pct_maximo_creditos'] - $this->variables['pct_gastos_credito'], 0);
+		$this->variables['pct_restante']		 	= MAX($tempArray);
+		$tempArray									= array(0, 1 - $this->variables['pct_gastos_no_credito'] - $min_pct_ahorro->__get('dato_valor') - $this->variables['pct_gastos_credito']);
+		$this->variables['pct_ahorro']			 	= MAX($tempArray);	
+		$tempArray									= array(0, ($this->variables['pct_ahorro']*$this->variables['ingresos_netos']));
+		$this->variables['cuota_max']				= MAX($tempArray);
+		$tempArray									= array(0, $this->variables['pct_maximo_creditos'] * $this->variables['ingresos_netos']);
+		$this->variables['cuota_max_credito']		= MAX($tempArray);	
+		
+		$pct_gasto									= 0.95;
+		$this->variables['cuota_ini_calc']	 		= $this->variables['cuota_inicial'];
+		
+		if ($this->variables['pct_gastos'] <= $pct_gasto)
+			$cp	= 1;
+		else
+			$cp = 0;
+		
+		if ($this->variables['pct_restante'] > 0)
+			$ne = 1;
+		else
+			$ne = 0;
+		
+		if ($cp == 1)
+		{
+			if ($ne == 1)
+			{
+				if ($this->variables['tiempo_sueno'] > 0)
+				{
+					$tasa_cdt								= new Dato(6);
+					$this->variables['cuota_ini_calc'] 		= $this->variables['cuota_inicial'] *  pow((1 + $tasa_cdt->__get('dato_valor')), $this->variables['tiempo_sueno']) + $this->fv($tasa_cdt->__get('dato_valor'), $this->variables['tiempo_sueno'], $this->variables['cuota_max_credito']);
+					$this->variables['valor_credito'] 		= $this->variables['valor_bien'] - $this->variables['cuota_ini_calc'];
+					$this->salida[]							= "Usted puede ahorra por " . $this->variables['tiempo_sueno'] . " meses logrando una cuota inicial de $" . $this->variables['cuota_ini_calc'];
+				}
+				else
+				{
+					$this->variables['cuota_ini_calc'] 		= $this->variables['cuota_inicial'];
+					$this->variables['valor_credito'] 		= $this->variables['valor_bien'] - $this->variables['cuota_ini_calc'] ;				
+				}
+				
+				$tasa_mensual								= new Dato(2);
+				$numero_max_cuotas							= new Dato(10);
+				$this->variables['valor_monto_credito']		= $this->PV($tasa_mensual->__get('dato_valor'), $numero_max_cuotas->__get('dato_valor'), $this->variables['cuota_max_credito']);			
+				
+				if ($this->variables['valor_monto_credito'] > $this->variables['valor_credito'])
+				{
+					
+					$this->variables['minimo_permitido']	= $this->NPER($tasa_mensual->__get('dato_valor'), $this->variables['cuota_max_credito'], -$this->variables['valor_credito']);
+					$this->variables['pago_minimo']			= $this->PMT($tasa_mensual->__get('dato_valor'), $numero_max_cuotas->__get('dato_valor'), -$this->variables['valor_credito']);	
+					
+					if (($this->variables['minimo_permitido'] <= $this->variables['cuotas']) && ($this->variables['cuotas'] <= $numero_max_cuotas->__get('dato_valor')))
+					{
+						$this->variables['pago_sugerido']	= $this->PMT($tasa_mensual->__get('dato_valor'), $this->variables['cuotas'], -$this->variables['valor_credito']);
+						$tempArray							= array($this->variables['cuotas'], $this->variables['pago_sugerido'], $this->variables['pago_sugerido']*$this->variables['cuotas'], " Ud puede obtener un crédito a " . $this->variables['cuotas'] . " meses pagando cuotas de $ " . $this->variables['pago_sugerido'] . " donde pagará en total $" . $this->variables['pago_sugerido']*$this->variables['cuotas']);
+						$this->salida[]						= $tempArray;
+					}
+					else
+					{
+						$tempArray							= array(0,0,0, " Lo lamentamos el número de pagos que sugirio no se encuentra dentro del rango posible para un crédito");
+						$this->salida[]						= $tempArray;						
+					}
+					
+					$tempArray								= array($this->variables['minimo_permitido'],$this->variables['cuota_max_credito'],$this->variables['cuota_max_credito']*$this->variables['minimo_permitido'],  " Ud puede obtener un crédito a " . $this->variables['minimo_permitido'] . " meses pagando cuotas de $ " . $this->variables['cuota_max_credito'] . " donde pagará en total $" . $this->variables['cuota_max_credito']*$this->variables['minimo_permitido'];);
+					$this->salida[]							= $tempArray;		
+					$tempArray								= array($numero_max_cuotas->__get('dato_valor'),$this->variables['pago_minimo'],$numero_max_cuotas->__get('dato_valor')*  $this->variables['pago_minimo'], " Ud puede obtener un crédito a " . $numero_max_cuotas->__get('dato_valor') . " meses pagando cuotas de $ " . $this->variables['pago_minimo'] . " donde pagará en total $" . $numero_max_cuotas->__get('dato_valor')*  $this->variables['pago_minimo']);
+					$this->salida[]							= $tempArray;						
+					
+					$this->variables['periodo_alternativo'] = ($this->variables['minimo_permitido'] + $numero_max_cuotas->__get('dato_valor'))/2;					
+					$this->variables['pego_alternativo'] 	= $this->PMT($tasa_mensual->__get('dato_valor'), $this->variables['periodo_alternativo'], -$this->variables['valor_credito']);	
+					
+					$this->salida[]								= " Ud puede obtener un crédito a " . $this->variables['periodo_alternativo'] . " meses pagando cuotas de $ " . $this->variables['pego_alternativo'] . " donde pagará en total $" . $this->variables['periodo_alternativo'] *  $this->variables['pego_alternativo'];	
+					
+				}
+				else
+				{
+					$rentas								= new Dato(4);
+					$tasa_mensual_cdt					= new Dato(6);
+					$inflacion							= new Dato(8);
+					$tasa_mensual						= new Dato(2);
+					$max_porcentaje						= new Dato(9);	
+					$numero_max_cuotas					= new Dato(10);	
+					$porcentaje_min_ahorro				= new Dato(11);	
+					$tiempo_max_ahorro					= new Dato(12);		
+					
+					$this->variables['faltante']		= $this->variables['valor_credito'] - $this->variables['valor_monto_credito'];
+					$this->variables['por_ahorrar']		= $this->nAhorro($this->variables['cuota_ini_calc'], $this->variables['cuota_max'], $this->variables['valor_credito'], $rentas->__get('dato_valor'), $tasa_mensual_cdt->__get('dato_valor'),  $inflacion->__get('dato_valor'));
+				
+					if ($this->variables['por_ahorrar']	 <= $tiempo_max_ahorro->__get('datos_valor'))
+						$this->salida[]	= "Tendría que ahorrar por  " . $this->variables['por_ahorrar']. " MESES PARA ALCANZAR UN NIVEL SUFICIENTE DE CUOTA INICIAL PARA QUE LAS CUOTAS ESTEN DENTRO DE SUS LIMITES DE CREDITO PERMITIDOS (PARA QUE PUEDA PEDIR UN CREDITO AL MAXIMO NUMERO DE CUOTAS POSIBLE) " . $numero_max_cuotas->__get('dato_valor') . " MESES CON SU CAPACIDAD DE AHORRO ACTUAL $". $this->variables['cuota_max']; 
+					else
+						$this->salida[]	= "DE ACUERDO A SU NIVEL DE INGRESOS Y AHORRO TENDRIA QUE AHORRAR POR MAS DE " . $tiempo_max_ahorro->__get('dato_valor') . " MESES PARA ALCANZAR UN NIVEL SUFICIENTE DE CUOTA INICIAL PARA SU CRÉDITO CON UN NIVEL DE AHORRO DE $" . $this->variables['cuota_max']; 					
+					
+					$this->variables['pago_minimo']		= $this->PMT($tasa_mensual->__get('dato_valor'), $numero_max_cuotas->__get('dato_valor'), $this->variables['valor_credito']);	
+					
+					if (($this->variables['pago_minimo'] + $this->variables['gastos_financieros'])/($this->variables['pago_minimo'] + $this->variables['gastos_financieros'] + $this->variables['gastos_no_financieros']) < $max_porcentaje->__get('dato_valor'))
+	
+						$this->variables['ingreso_nuevo']	=	($this->variables['pago_minimo'] + $this->variables['gastos_financieros'] + $this->variables['gastos_no_financieros']) / (1 - $porcentaje_min_ahorro->__get('dato_valor'));
+					else
+						$this->variables['ingreso_nuevo']	=	(($this->variables['pago_minimo'] + $this->variables['gastos_financieros'])/$max_porcentaje->__get('dato_valor') + 	$this->variables['gastos_no_financieros']) / (1 - $porcentaje_min_ahorro->__get('dato_valor'));						
+					$this->salida[]	= "PODRÍA SOLICITAR UN CREDITO AHORA POR UN MONTO INFERIOR AL INDICADO, LA SUGERENCIA ES POR $" . $this->variables['valor_monto_credito'] . " SIN TENER QUE HACER HACER UN AHORRO ADICIONAL DE CUOTA INICIAL, EL CREDITO SERIA A  " . $numero_max_cuotas->__get('dato_valor') . " MESES CON CUOTAS IGUALES A SU CAPACIDAD DE PAGO ACTUAL: $" . $this->variables['cuota_max_credito'];
+					$this->salida[]	= "PODRÍA INCREMENTAR SUS INGRESOS A " . $this->variables['ingreso_nuevo'] . " ESTO LE PERMITIRA SOLICITAR LA CANTIDAD QUE NECESITA A  " . $numero_max_cuotas->__get('dato_valor') . " MESES CON CUOTAS " . $this->variables['pago_minimo'];
+
+				}
+			}
+			
+			else
+			{
+				$tasa_mensual						= new Dato(2);				
+				$rentas								= new Dato(4);
+				$tasa_mensual_cdt					= new Dato(6);
+				$inflacion							= new Dato(8);	
+				$max_porcentaje						= new Dato(9);
+				$numero_max_cuotas					= new Dato(10);	
+				$porcentaje_min_ahorro				= new Dato(11);	
+				$tiempo_max_ahorro					= new Dato(12);	
+				
+				$this->variables['por_ahorrar']		= $this->nAhorro($this->variables['cuota_ini_calc'], $this->variables['cuota_max'], $this->variables['valor_credito'], $rentas->__get('dato_valor'), $tasa_mensual_cdt->__get('dato_valor'),  $inflacion->__get('dato_valor'));
+				
+				$this->salida[]						= "SU CAPACIDAD DE CREDITO NO LE ES SUFICIENTE PARA SOLICITAR UN NUEVO CREDITO PERO PUEDE OPTAR POR LAS SIGUIENTES ALTERNATIVAS  ";
+			
+				if ($this->variables['por_ahorrar']	< $tiempo_max_ahorro->__get('dato_valor'))
+					$this->salida[]		=	"TENDRÍA QUE AHORRAR POR  " . $this->variables['por_ahorrar'] . " MESES Y ADQUIRIR EL BIEN SIN CREDITOS AHORRANDO $" . $this->variables['cuota_max'];
+				else 
+					$this->salida[]		=	"DE ACUERDO A SU NIVEL DE INGRESOS Y AHORRO TENDRIA QUE AHORRAR POR MAS DE " . $tiempo_max_ahorro . " MESES PARA ALCANZAR UN NIVEL SUFICIENTE PARA ADQUIRIR SU BIEN SIN NECESIDAD DE CREDIT0, AHORRANDO MENSUALMENTE $" . $this->variables['cuota_max'];
+				
+				$this->salida[]						=  "USTED PODRIA UTILIZAR EL DINERO QUE TIENE DISPONIBLE PARA AHORRO EN DISMINUIR EL NIVEL DE ENDEUDAMEINTO Y AHORRANDO MENSUALMETE $" .  $this->variables['cuota_max'] . " AHORRANDO Y REALIZANDO DISMINUCION DE LA DEUDA";
+				$this->variables['pago_minimo']		= $this->PMT($tasa_mensual->__get('dato_valor'), $numero_max_cuotas->__get('dato_valor'), -$this->variables['valor_credito']);
+
+				if (($this->variables['pago_minimo'] + $this->variables['pct_gastos_credito'])/($this->variables['pago_minimo'] + $this->variables['pct_gastos_credito'] + $this->variables['pct_gastos_no_credito']) < $max_porcentaje->__get('dato_valor'))
+					$this->variables['ingreso_nuevo']	=	($this->variables['pago_minimo'] + $this->variables['pct_gastos_credito'] + $this->variables['pct_gastos_no_credito']) / (1 - $porcentaje_min_ahorro->__get('dato_valor'));
+				else
+					$this->variables['ingreso_nuevo']	=	(($this->variables['pago_minimo'] + $this->variables['pct_gastos_credito'])/$max_porcentaje->__get('dato_valor') + 	$this->variables['pct_gastos_no_credito']) / (1 - $porcentaje_min_ahorro->__get('dato_valor'));						
+
+				$this->salida[]	= "PODRÍA INCREMENTAR SUS INGRESOS A " . $this->variables['ingreso_nuevo'] . " ESTO LE PERMITIRA SOLICITAR LA CANTIDAD QUE NECESITA A  " . $numero_max_cuotas->__get('dato_valor') . " MESES CON CUOTAS " . $this->variables['pago_minimo'];
+
+			}
+		}
+		else
+		{
+			$tasa_mensual						= new Dato(2);
+			$max_porcentaje						= new Dato(9);
+			$numero_max_cuotas					= new Dato(10);	
+			$porcentaje_min_ahorro				= new Dato(11);	
+			
+			$this->salida[]	= "SU CAPACIDAD DE CREDITO Y AHORRO NO LE ES SUFICIENTE PARA SOLICITAR UN NUEVO CREDITO ";		
+			$this->salida[]	= "DISMINUYA GASTOS PARA PODER TENER CAPACIDAD DE CREDITO Y AHORRO ";
+			
+			$this->variables['pago_minimo']		= $this->PMT($tasa_mensual->__get('dato_valor'), $numero_max_cuotas->__get('dato_valor'), -$this->variables['valor_credito']);
+			
+			
+
+			if (($this->variables['pago_minimo'] + $this->variables['pct_gastos_credito'])/($this->variables['pago_minimo'] + $this->variables['pct_gastos_credito'] + $this->variables['pct_gastos_no_credito']) < $max_porcentaje)
+				$this->variables['ingreso_nuevo']	=	($this->variables['pago_minimo'] + $this->variables['pct_gastos_credito'] + $this->variables['pct_gastos_no_credito']) / (1 - $porcentaje_min_ahorro->__get('dato_valor'));
+			else
+				$this->variables['ingreso_nuevo']	=	(($this->variables['pago_minimo'] + $this->variables['pct_gastos_credito'])/$max_porcentaje->__get('dato_valor') + 	$this->variables['pct_gastos_no_credito']) / (1 - $porcentaje_min_ahorro->__get('dato_valor'));						
+
+			$this->salida[]	= "PODRÍA INCREMENTAR SUS INGRESOS A " . $this->variables['ingreso_nuevo'] . " ESTO LE PERMITIRA SOLICITAR LA CANTIDAD QUE NECESITA A  " . $numero_max_cuotas->__get('dato_valor') . " MESES CON CUOTAS " . $this->variables['pago_minimo'];
+
+
+		}
+		if (!isset($this->variables['show_work']))
+		{
+			echo '<pre>';
+			print_r ($this->variables);
+			print_r ($this->salida);
+			echo '</pre>';
+		}
+		return $this->salida;
+	}
+}
+?>
