@@ -4256,7 +4256,8 @@ div.people { margin-top: 70px; }
 	width: 299px;
 	left: 110px; }
 	
-.browserIE.move {
+	
+.browserIE .move {
 	margin-top: 45px;
  }	
  
