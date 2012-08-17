@@ -30,6 +30,7 @@
 	
 	<script language="JavaScript" src="<?php echo APPLICATION_URL?>javascripts/jquery.min.js" ></script>
 	<script language="JavaScript" src="<?php echo APPLICATION_URL?>javascripts/jquery-ui-1.8.20.custom.min.js" ></script>
+	<script language="JavaScript" src="<?php echo APPLICATION_URL?>javascripts/browserDetect.js" ></script>
 	<script language="JavaScript" src="<?php echo APPLICATION_URL?>javascripts/diagnostics-behaviors.js" ></script>
 	<script language="JavaScript" src="<?php echo APPLICATION_URL?>javascripts/metas-goals.js" ></script>
 	<script language="JavaScript" src="<?php echo APPLICATION_URL?>javascripts/global-functions.js" ></script>
@@ -168,7 +169,7 @@ foreach ($_POST as $key=>$value)
 							        				</div>
 							        			</div>
 							        			<!--/tooltip -->						        				
-					        					<div id="goal-1" class="goal-1"><img src="<?php echo APPLICATION_URL?>/images/goals/big/estudio.png" alt="estudio" width="" height="" /></div>
+					        					<div id="goal-1" class="goal-1"><img src="<?php echo APPLICATION_URL?>/images/goals/big/estudio.png" alt="estudio" width="100" height="100"  /></div>
 					        					<h6 class="text-center greytxt">Estudio</h6>
 					        					<!--p class="text-center no-margin small light-greytext"><span class="greentxt" aria-hidden="true" data-icon="&#x73;"></span> 30 de julio</p-->
 					        				</div>
@@ -233,7 +234,7 @@ foreach ($_POST as $key=>$value)
 													</div>
 												</div>
 												<!--/tooltip -->	
-					        					<div id="goal-2" class="goal-2"><img src="<?php echo APPLICATION_URL?>/images/goals/big/emergencia.png" alt="emergencia" width="" height="" /></div>
+					        					<div id="goal-2" class="goal-2"><img src="<?php echo APPLICATION_URL?>/images/goals/big/emergencia.png" alt="emergencia" width="100" height="100" /></div>
 					        					<h6 class="text-center greytxt">Emergencias</h6>
 					        				</div>
 					        			</div><!-- /Goal 2 -->
@@ -297,7 +298,7 @@ foreach ($_POST as $key=>$value)
 							        				</div>
 							        			</div>
 							        			<!--/tooltip -->	
-					        					<div class="goal-3"><img src="<?php echo APPLICATION_URL?>/images/goals/big/carro.png" alt="carro" width="" height="" /></div>
+					        					<div class="goal-3"><img src="<?php echo APPLICATION_URL?>/images/goals/big/carro.png" alt="carro" width="100" height="100"  /></div>
 					        					<h6 class="text-center greytxt">Carro</h6>
 					        				</div>
 					        			</div><!-- /Goal 3 -->
@@ -362,7 +363,7 @@ foreach ($_POST as $key=>$value)
 							        				</div>
 							        			</div>
 							        			<!--/tooltip -->	
-					        					<div class="goal-4"><img src="<?php echo APPLICATION_URL?>/images/goals/big/moto.png" alt="moto" width="" height="" /></div>
+					        					<div class="goal-4"><img src="<?php echo APPLICATION_URL?>/images/goals/big/moto.png" alt="moto" width="100" height="100"  /></div>
 					        					<h6 class="text-center greytxt">Moto</h6>
 					        				</div>
 					        			</div><!-- /Goal 4 -->
@@ -428,7 +429,7 @@ foreach ($_POST as $key=>$value)
 							        				</div>
 							        			</div>
 							        			<!--/tooltip -->	
-					        					<div class="goal-6"><img src="<?php echo APPLICATION_URL?>/images/goals/big/matrimonio.png" alt="matrimonio" width="" height="" /></div>
+					        					<div class="goal-6"><img src="<?php echo APPLICATION_URL?>/images/goals/big/matrimonio.png" alt="matrimonio" width="100" height="100"  /></div>
 					        					<h6 class="text-center greytxt">Matrimonio</h6>
 					        				</div>
 					        			</div><!-- /Goal 6 -->
@@ -493,7 +494,7 @@ foreach ($_POST as $key=>$value)
 							        				</div>
 							        			</div>
 							        			<!--/tooltip -->	
-					        					<div class="goal-7"><img src="<?php echo APPLICATION_URL?>/images/goals/big/tener-hijo.png" alt="Tener un hijo" width="" height="" /></div>
+					        					<div class="goal-7"><img src="<?php echo APPLICATION_URL?>/images/goals/big/tener-hijo.png" alt="Tener un hijo" width="100" height="100"  /></div>
 					        					<h6 class="text-center greytxt">Tener un hijo</h6>
 					        				</div>
 					        			</div><!-- /Goal 7 -->										
@@ -558,7 +559,7 @@ foreach ($_POST as $key=>$value)
 							        				</div>
 							        			</div>
 							        			<!--/tooltip -->	
-					        					<div class="goal-8"><img src="<?php echo APPLICATION_URL?>/images/goals/big/estudio-hijos.png" alt="Estudio hijos" width="" height="" /></div>
+					        					<div class="goal-8"><img src="<?php echo APPLICATION_URL?>/images/goals/big/estudio-hijos.png" alt="Estudio hijos" width="100" height="100"  /></div>
 					        					<h6 class="text-center greytxt">Estudio de hijos</h6>
 					        				</div>
 					        			</div><!-- /Goal 8 -->
@@ -625,7 +626,7 @@ foreach ($_POST as $key=>$value)
 							        			</div>
 							        			<!--/tooltip -->	
 							        			
-					        					<div class="goal-9"><img src="<?php echo APPLICATION_URL?>/images/goals/big/empezar-negocio.png" alt="Empezar negocio" width="" height="" /></div>
+					        					<div class="goal-9"><img src="<?php echo APPLICATION_URL?>/images/goals/big/empezar-negocio.png" alt="Empezar negocio" width="100" height="100"  /></div>
 					        					<h6 class="text-center greytxt">Empezar un negocio</h6>
 					        				</div>
 					        			</div><!-- /Goal 9 -->
@@ -694,7 +695,7 @@ foreach ($_POST as $key=>$value)
 							        			</div>
 							        			<!--/tooltip -->	
 					        			
-					        					<div class="goal-10"><img src="<?php echo APPLICATION_URL?>/images/goals/big/pagar-deudas.png" alt="PAgar deudas" width="" height="" /></div>
+					        					<div class="goal-10"><img src="<?php echo APPLICATION_URL?>/images/goals/big/pagar-deudas.png" alt="PAgar deudas" width="100" height="100"  /></div>
 					        					<h6 class="text-center greytxt">Pagar deudas</h6>
 					        				</div>
 					        			</div><!-- /Goal 10 -->
@@ -758,7 +759,7 @@ foreach ($_POST as $key=>$value)
 							        				</div>
 							        			</div>
 							        			<!--/tooltip -->	
-					        					<div class="goal-11"><img src="<?php echo APPLICATION_URL?>/images/goals/big/vacaciones.png" alt="Vacaciones" width="" height="" /></div>
+					        					<div class="goal-11"><img src="<?php echo APPLICATION_URL?>/images/goals/big/vacaciones.png" alt="Vacaciones" width="100" height="100"  /></div>
 					        					<h6 class="text-center greytxt">Vacaciones</h6>
 					        				</div>
 					        			</div><!-- /Goal 11 -->
@@ -822,7 +823,7 @@ foreach ($_POST as $key=>$value)
 							        				</div>
 							        			</div>
 							        			<!--/tooltip -->	
-					        					<div class="goal-12"><img src="<?php echo APPLICATION_URL?>/images/goals/big/tratamiento-medico.png" alt="Tratamiento médico" width="" height="" /></div>
+					        					<div class="goal-12"><img src="<?php echo APPLICATION_URL?>/images/goals/big/tratamiento-medico.png" alt="Tratamiento médico" width="100" height="100"  /></div>
 					        					<h6 class="text-center greytxt">Tratamiento médico</h6>
 					        				</div>
 					        			</div>
@@ -887,7 +888,7 @@ foreach ($_POST as $key=>$value)
 							        				</div>
 							        			</div>
 							        			<!--/tooltip -->	
-					        					<div class="goal-13"><img src="<?php echo APPLICATION_URL?>/images/goals/big/retiro.png" alt="Retiro" width="" height="" /></div>
+					        					<div class="goal-13"><img src="<?php echo APPLICATION_URL?>/images/goals/big/retiro.png" alt="Retiro" width="100" height="100"  /></div>
 					        					<h6 class="text-center greytxt">Retiro</h6>
 					        				</div>
 					        			</div><!-- /Goal 13 -->										
@@ -957,7 +958,7 @@ foreach ($_POST as $key=>$value)
 							        				</div>
 							        			</div>
 							        			<!--/tooltip -->	
-					        					<div class="goal-16"><img src="<?php echo APPLICATION_URL?>/images/goals/big/remodelar.png" alt="Remodelar" width="" height="" /></div>
+					        					<div class="goal-16"><img src="<?php echo APPLICATION_URL?>/images/goals/big/remodelar.png" alt="Remodelar" width="100" height="100"  /></div>
 					        					<h6 class="text-center greytxt">Remodelar</h6>
 					        				</div>
 					        			</div><!-- /Goal 16 -->
@@ -1021,7 +1022,7 @@ foreach ($_POST as $key=>$value)
 							        				</div>
 							        			</div>
 							        			<!--/tooltip -->	
-					        					<div class="goal-17"><img src="<?php echo APPLICATION_URL?>/images/goals/big/electrodomesticos.png" alt="Comprar electrodomésticos" width="" height="" /></div>
+					        					<div class="goal-17"><img src="<?php echo APPLICATION_URL?>/images/goals/big/electrodomesticos.png" alt="Comprar electrodomésticos" width="100" height="100"  /></div>
 					        					<h6 class="text-center  greytxt">Electrodomésticos</h6>
 					        				</div>
 					        			</div><!-- /Goal 17 -->
@@ -1085,7 +1086,7 @@ foreach ($_POST as $key=>$value)
 							        				</div>
 							        			</div>
 							        			<!--/tooltip -->	
-					        					<div class="goal-18"><img src="<?php echo APPLICATION_URL?>/images/goals/big/plata-extra.png" alt="Plata Extra" width="" height="" /></div>
+					        					<div class="goal-18"><img src="<?php echo APPLICATION_URL?>/images/goals/big/plata-extra.png" alt="Plata Extra" width="100" height="100"  /></div>
 					        					<h6 class="text-center greytxt">Plata extra</h6>
 					        				</div>
 					        			</div><!-- /Goal 18 -->
@@ -1150,7 +1151,7 @@ foreach ($_POST as $key=>$value)
 													</div>
 												</div>
 												<!--/tooltip -->
-						        				<div class="goal-15"><img src="<?php echo APPLICATION_URL?>/images/goals/big/otro.png" alt="Otro" width="" height="" /></div>
+						        				<div class="goal-15"><img src="<?php echo APPLICATION_URL?>/images/goals/big/otro.png" alt="Otro" width="100" height="100" /></div>
 						        				<h6 class="text-center greytxt">Otro</h6>
 						        			</div>
 						        		</div><!-- /Goal 14 -->	

@@ -160,8 +160,6 @@ if (!isset($userData['user_income_representation']))
 		<div class="row">
 			<div class="nine columns"><!-- Main Panel Width -->
 				<div class="panel header-explorar"> <!-- panel -->
-				
-					
 					<!-- Ribbon -->
 					<div class="ribbon">
 						<h2><span class="head-e"><span class="sprite-1 metas-icon">Icon</span></span><strong>Metas:</strong> Costo de tu meta</h2>
@@ -582,16 +580,14 @@ if (!isset($userData['user_income_representation']))
 			  		<!-- title -->
 				    <h6 class="thin whitetxt text-center large txt-shadow-black">TU <strong>META</strong></h6>
 				    <!-- /title -->
-			  	
 						<div class="row">
 							<div class="five columns">
-								<img src="<?php echo APPLICATION_URL?>/images/goals/big/carro.png" alt="estudio" width="" height="" />
+								<img src="<?php echo APPLICATION_URL?>/images/goals/big/carro.png" alt="estudio" width="70" height="70" />
 							</div>
 							<div class="seven columns">
 							 <h6 class="whitetxt txt-shadow-black uppercase"><strong><?php echo $objetivo;?></strong></h6>
 							</div>
 						</div>
-
 				</div><!-- /Padding 10 -->
 			</div><!-- bluebox -->
 

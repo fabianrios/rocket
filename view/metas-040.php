@@ -345,7 +345,7 @@ include_once('header.php');
 				    	<div class="goal margin-top-10">
 							<div class="row">
 								<div class="five columns">
-									<img src="<?php echo APPLICATION_URL?>/images/goals/big/carro.png" alt="estudio" width="" height="" />
+									<img src="<?php echo APPLICATION_URL?>/images/goals/big/carro.png" alt="estudio" width="70" height="70" />
 								</div>
 								
 								

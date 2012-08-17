@@ -445,11 +445,10 @@ $userData 	= unserialize($user->__get('user_data'));
 				  		<!-- title -->
 					    <h6 class="thin whitetxt text-center large txt-shadow-black">TU <strong>META</strong></h6>
 					    <!-- /title -->
-				  	
 				    	<div class="goal margin-top-10">
 							<div class="row">
 								<div class="five columns">
-									<img src="<?php echo APPLICATION_URL?>/images/goals/big/carro.png" alt="estudio" width="" height="" />
+									<img src="<?php echo APPLICATION_URL?>/images/goals/big/carro.png" alt="estudio" width="70" height="70" />
 								</div>
 								
 								
@@ -466,7 +465,6 @@ $userData 	= unserialize($user->__get('user_data'));
 								</div>
 							</div>
 						</div>
-		
 					</div><!-- /Padding 10 -->
 				</div><!-- bluebox -->
 
