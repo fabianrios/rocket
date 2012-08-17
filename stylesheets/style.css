@@ -4252,9 +4252,13 @@ div.people { margin-top: 70px; }
 	background: url(../images/move.png) no-repeat center top;
 	height: 165px;
 	position: absolute;
-	margin-top: 75px;
+	margin-top: 65px;
 	width: 299px;
 	left: 110px; }
+	
+.browserIE.move {
+	margin-top: 45px;
+ }	
  
 .tu-aporte {
 	position: absolute;

@@ -31,6 +31,7 @@
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 
 	<script src="<?php echo APPLICATION_URL;?>javascripts/jquery.min.js"></script>
+	<script src="<?php echo APPLICATION_URL;?>javascripts/browserDetect.js"></script>
 	<script language="JavaScript" src="<?php echo APPLICATION_URL?>javascripts/diagnostics-behaviors.js" ></script>
 	<script language="JavaScript" src="<?php echo APPLICATION_URL?>javascripts/global-functions.js" ></script>
 	<script src="<?php echo APPLICATION_URL;?>js/jquery.knob-1.1.2.js"></script>	

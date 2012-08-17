@@ -95,8 +95,6 @@ include_once('breadcrumbs-descubra.php');
 						<div class="explorer-question"><!-- Question tres Preguntas -->
         				    <h4 class="greytxt text-center"><?php echo utf8_encode($explora->__get('explora_question'));?></h4>
         				    <ul class="block-grid two-up">	
- 
-						         
 <li>
                                     <a href="javascript:void(0);" onClick="Rep(<?php echo $answer->__get('answer_goto')?>);">                                
                                         <div class="bubble-1 text-center">
@@ -107,7 +105,6 @@ include_once('breadcrumbs-descubra.php');
                                         </div>
                                     </a>
                                 </li>
-						        
 						        
 						        <li>                                            
         				             <div class="bubble-1 text-center">
@@ -120,7 +117,6 @@ include_once('breadcrumbs-descubra.php');
 						        	 </div>
         				    	</li>
         				    	
-
         				    </ul>
 						</div><!-- End Question tres Preguntas -->			
 					</div>
