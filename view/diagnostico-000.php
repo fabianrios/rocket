@@ -113,7 +113,7 @@ include_once('header.php');
 					 	<div class="row star-steps"><!-- /Row  -->
 						 	
 						 		<div class="four columns">
-						     			<h5 class="no-margin greytxt"><span aria-hidden="true" data-icon="&#x77;"></span> <strong>Planeación</strong></h5>
+						     			<h5 class="no-margin greytxt"><span aria-hidden="true" data-icon="&#x77;"></span> <strong>Cómo planeas</strong></h5>
 						     			<br />
 						     			<img src="images/planeacion.jpg" alt="planeacion" width="184" height="87" class="image full" />
 										<br />
@@ -128,7 +128,7 @@ include_once('header.php');
 						     	</div>
 						     	
 						     	<div class="four columns">
-						     			<h5 class="no-margin greytxt"><span  aria-hidden="true" data-icon="&#x77;"></span> <strong>Consumo</strong></h5>
+						     			<h5 class="no-margin greytxt"><span  aria-hidden="true" data-icon="&#x77;"></span> <strong>Habitos de consumo</strong></h5>
 						     			<br />
 						     			<img src="images/consumo.jpg" alt="planeacion" width="184" height="87" class="image full" />
 										<br />
