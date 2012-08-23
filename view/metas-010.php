@@ -1227,7 +1227,6 @@ include_once('footer.php');
 <!-- Included JS Files -->
 <div class="goal-block" id="prime-goal-block" style="display:none;"><!--goal block-->
 	<div class="goal-legend"><!--goal legend-->
-
 		<div class="arrow-left-1"></div>
 	</div><!--/goal legend-->
 	

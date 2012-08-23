@@ -179,9 +179,7 @@ if (!isset($userData['user_income_representation']))
                     if ((isset($_GET[0])) && ($_GET[0]== '3'))
                     {
                     ?>	                    
-					
 					<!--CARRO-->
-					
 					<div class="row question margin"><!-- Row Question-->	
 						<div class="container"><!-- Container Padding 20px -->
 							<a href="#" class="sprite-1 more-info">Info</a>

@@ -208,7 +208,7 @@ $userData 	= unserialize($user->__get('user_data'));
 							 		<div class="four columns"><!-- Col 1/3 -->
 							 		
 							 		
-							 		<h4 class="greytxt text-center query"><span class="bluetxt">&#8226;</span> Ingreso</h4>
+							 		<h4 class="greytxt text-center query"><span class="bluetxt">&#8226;</span> Ingresos por sueldo</h4>
 							 			<table class="blank-table-2 centered">
 											<tr>
 											    <td><div class="less-than round-left" aria-hidden="true" data-icon="&#x6c;"></div></td>
@@ -216,7 +216,7 @@ $userData 	= unserialize($user->__get('user_data'));
 											    <td><div class="more-than round-right" aria-hidden="true" data-icon="&#x3b;"></div></td>
 											</tr>
 										</table>
-							 		<p class="text-center small light-greytxt">¿Cúantos son tus ingresos netos promedio mensuales? (después de descontar esa tan lejana pensión, y tu costosa salud, etc.)</p>
+							 		<p class="text-center small light-greytxt">¿Cuántos son tus ingresos netos promedio mensuales? (después de descontar esa tan lejana pensión, y tu costosa salud, etc.)</p>
 							 		</div><!-- /Col 1/3 -->
 							 		<div class="four columns"><!-- Col 2/3 -->
 							 		<h4 class="greytxt text-center query"><span class="greentxt">&#8226;</span> Pensión mensual</h4>
@@ -227,7 +227,7 @@ $userData 	= unserialize($user->__get('user_data'));
 											    <td><div class="more-than round-right" aria-hidden="true" data-icon="&#x3b;"></div></td>
 											</tr>
 										</table>
-							 		<p class="text-center small light-greytxt">¿Cúanto es tu ingreso mensual por esa tan mereceida pensión?</p>
+							 		<p class="text-center small light-greytxt">¿Cuánto es tu ingreso mensual por esa tan mereceida pensión?</p>
 							 		</div><!-- /Col 2/3 -->
 							 		<div class="four columns"><!-- Col 3/3 -->
 							 		<h4 class="greytxt text-center query"><span class="orangetxt">&#8226;</span> Otros ingresos</h4>
@@ -238,14 +238,12 @@ $userData 	= unserialize($user->__get('user_data'));
 											    <td><div class="more-than round-right" aria-hidden="true" data-icon="&#x3b;"></div></td>
 											</tr>
 										</table>
-							 		<p class="text-center small light-greytxt">Si tienes otros ingresos diferentes a sueldo o pensión, ¿Cúanto suman?</p>
+							 		<p class="text-center small light-greytxt">Si tienes otros ingresos diferentes a sueldo o pensión, ¿Cuánto suman?</p>
 							 		</div><!-- /Col 3/3 -->
 							 	</div><!-- /Row Result -->
 						</div> 	
 					</div>
 					<!-- /Question 1 -->
-					
-					
 					
 					
 					
@@ -300,7 +298,7 @@ $userData 	= unserialize($user->__get('user_data'));
 										    <td><div class="more-than round-right" aria-hidden="true" data-icon="&#x3b;"></div></td>
 										</tr>
 									</table>
-						 		<p class="text-center small light-greytxt">¿Cuál es el valor de los pagos que realizaste el mes pasado por tus deudas con familiares, amigos y otros?</p>
+						 		<p class="text-center small light-greytxt">¿Cuánto pagaste en promedio cada mes por créditos con entidades financieras, familiares, amigos u otros?</p>
 						 		</div><!-- /Col 1/4 -->
 						 		
 	
@@ -366,7 +364,7 @@ $userData 	= unserialize($user->__get('user_data'));
 							 		<p class="text-center small light-greytxt">¿Cuánto suman los gastos mensuales que tienes que hacer por el resto de cosas sin incluir ahorros? (comida, transporte, vestuario, hogar, arriendo y diversión, etc.)</p>
 							 		</div><!-- /Col 2/3 -->
 							 		<div class="four columns"><!-- Col 3/3 -->
-							 		<h4 class="greytxt text-center query"><span class="orangetxt">&#8226;</span> Ahorro</h4>
+							 		<h4 class="greytxt text-center query"><span class="orangetxt">&#8226;</span> Ahorros planeados</h4>
 							 			<table class="blank-table-2 centered">
 											<tr>
 											    <td><div class="less-than round-left" aria-hidden="true" data-icon="&#x6c;"></div></td>
@@ -401,7 +399,7 @@ $userData 	= unserialize($user->__get('user_data'));
 								 	</div>
 								 	
 								 	<div class="four columns">
-								 		<h6><strong class="greytxt no-margin txt-shadow-white">POSIBILIDAD DE AHORRO</strong></h6>
+								 		<h6><strong class="greytxt no-margin txt-shadow-white">POSIBILIDAD ADICIONAL DE AHORRO</strong></h6>
 								 		<h4 class="greentxt resultado thin">$345,324.905</h4>
 								 		<small class="greytxt">Tendrías una capacidad de endeudamiento de: <span class="orangetxt resultado thin">$345,324.905</span></small>
 								 		

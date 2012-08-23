@@ -4456,3 +4456,7 @@ box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.3);
 
 
  .gatos-recurrente-1 p {	margin-bottom: 5px;	margin-top: 10px;}.gatos-recurrente-1 label strong.title {	font-size: 13px;	letter-spacing: 0;	font-weight: bold;	display: block;	height: 40px;}  .delete {	position: absolute;	right: 10px;	bottom: 10px;}
+
+.fixeded{
+	position:fixed;
+}
