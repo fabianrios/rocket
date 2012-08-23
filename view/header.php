@@ -36,7 +36,6 @@ if(strpos($user->__get('user_image'), 'https:') !== false)
 							<div class="cancelar">
 								<ul>
 									<li><a href="<?php echo APPLICATION_URL?>user.controller/logoutUser.html" class="bluetxt small" aria-hidden="true" data-icon="&#xe05c;"> <strong>Cambiar contraseña</strong> </a></li>
-									<li><a href="<?php echo APPLICATION_URL?>user.controller/logoutUser.html" class="bluetxt small" aria-hidden="true" data-icon="q"> <strong>Cambiar foto</strong> </a></li>
 									<li><a href="<?php echo APPLICATION_URL?>user.controller/logoutUser.html" class="bluetxt small" aria-hidden="true" data-icon="y"> <strong>Cerrar sesión</strong> </a></li>
 								</ul>
 							</div>

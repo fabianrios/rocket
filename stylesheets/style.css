@@ -4416,8 +4416,7 @@ div.people { margin-top: 70px; }
 	}
 	
 	.circle-1:hover{
-		border: 8px solid rgba(142,198,64,.7);
-		background:white;
+		background: rgba(142,198,64,.4);
 	}
 	
 table.table-inputs thead{

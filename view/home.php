@@ -12,7 +12,7 @@
 	<!-- Set the viewport width to device width for mobile -->
 	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
 
-	<title>Rocket: La forma divertida de tener el control de tus finanzas</title>
+	<title>Rocket: Herramientas inteligentes para manejar mejor tu dinero</title>
 
 		<meta name="description" content="SITE DESCRIPTION" />
 		<meta name="keywords" content="SITE KEYWORDS" />
