@@ -217,7 +217,7 @@ if (!isset($userData['user_income_representation']))
 											    <td><a class="more-than round-right" aria-hidden="true" data-icon="&#x3b;"></a></td>
 											</tr>
 										</table>
-							 		<p class="text-center small">¿Cúanto debes por el credito de tu casa hoy?</p>
+							 		<p class="text-center small">¿Cuánto debes por el credito de tu casa hoy?</p>
 							 		</div><!-- /Col 1/4 -->
 							 		<div class="three columns"><!-- Col 2/4 -->
 							 		<h5 class="text-center greytxt no-margin txt-shadow-white"><strong><span class="greentxt">&#8226;</span> Tarjetas y rotativos</strong></h5>
@@ -228,10 +228,10 @@ if (!isset($userData['user_income_representation']))
 											    <td><a class="more-than round-right" aria-hidden="true" data-icon="&#x3b;"></a></td>
 											</tr>
 										</table>
-							 		<p class="text-center small">¿Cúanto debes entre tus tarjetas de crédito y créditos rotativos a hoy?</p>
+							 		<p class="text-center small">¿Cuánto debes entre tus tarjetas de crédito y créditos rotativos a hoy?</p>
 							 		</div><!-- /Col 2/4 -->
 							 		<div class="three columns"><!-- Col 3/4 -->
-							 		<h5 class="text-center greytxt no-margin txt-shadow-white"><strong><span class="orangetxt">&#8226;</span> Créditos financieros</strong></h5>
+							 		<h5 class="text-center greytxt no-margin txt-shadow-white"><strong><span class="orangetxt">&#8226;</span>Otros Creditos</strong></h5>
 							 			<table class="blank-table">
 											<tr>
 											    <td><a class="less-than round-left" aria-hidden="true" data-icon="&#x6c;"></a></td>
@@ -239,7 +239,7 @@ if (!isset($userData['user_income_representation']))
 											    <td><a class="more-than round-right" aria-hidden="true" data-icon="&#x3b;"></a></td>
 											</tr>
 										</table>
-							 		<p class="text-center small">¿Cúanto debes a entidades financieras hoy? (carro, moto, estudio, libre inversión, etc... diferentes a vivienda y tarjetas). </p>
+							 		<p class="text-center small">¿Cuánto debes a entidades financieras, familiare amigos u otros? (carro, moto, estudio, libre inversión, etc... diferentes a vivienda y tarjetas). </p>
 							 		</div><!-- /Col 3/4 -->
 							 		<div class="three columns"><!-- Col 4/4 -->
 							 		<h5 class="text-center greytxt no-margin txt-shadow-white"><strong><span class="aquatxt">&#8226;</span> Otros prestamos</strong></h5>
@@ -250,7 +250,7 @@ if (!isset($userData['user_income_representation']))
 											    <td><a class="more-than round-right" aria-hidden="true" data-icon="&#x3b;"></a></td>
 											</tr>
 										</table>
-							 		<p class="text-center small">¿Cúanto debes a familiares, amigos y demas hoy?</p>
+							 		<p class="text-center small">¿Cuánto debes a familiares, amigos y demas hoy?</p>
 							 		</div><!-- /Col 4/4 -->
 							 	</div><!-- /Row Result -->
 						 	</div><!-- Pasivos -->
@@ -321,7 +321,7 @@ if (!isset($userData['user_income_representation']))
 							 	
 <div class="row"><!-- Row Result -->
 							 		<div class="four columns"><!-- Col 1/3 -->
-							 		<h5 class="text-center greytxt no-margin txt-shadow-white"><strong><span class="bluetxt">&#8226;</span> Ingreso</strong></h5>
+							 		<h5 class="text-center greytxt no-margin txt-shadow-white"><strong><span class="bluetxt">&#8226;</span> Ingresos por sueldo</strong></h5>
 							 			<table class="blank-table">
 											<tr>
 											    <td><a class="less-than round-left" aria-hidden="true" data-icon="&#x6c;"></a></td>
@@ -329,7 +329,7 @@ if (!isset($userData['user_income_representation']))
 											    <td><a class="more-than round-right" aria-hidden="true" data-icon="&#x3b;"></a></td>
 											</tr>
 										</table>
-							 		<p class="text-center small">¿Cúantos son tus ingresos netos promedio mensuales? (despues de descontar esa tan lejana pensión, y tu costosa salud, etc.)</p>
+							 		<p class="text-center small">¿Cuántos son tus ingresos netos promedio mensuales? (despues de descontar esa tan lejana pensión, y tu costosa salud, etc.)</p>
 							 		</div><!-- /Col 1/3 -->
 							 		<div class="four columns"><!-- Col 2/3 -->
 							 		<h5 class="text-center greytxt no-margin txt-shadow-white"><strong><span class="greentxt">&#8226;</span> Pensión mensual</strong></h5>
@@ -340,7 +340,7 @@ if (!isset($userData['user_income_representation']))
 											    <td><a class="more-than round-right" aria-hidden="true" data-icon="&#x3b;"></a></td>
 											</tr>
 										</table>
-							 		<p class="text-center small">¿Cúanto es tu ingreso mensual por esa tan merecida pensión?</p>
+							 		<p class="text-center small">¿Cuánto es tu ingreso mensual por esa tan merecida pensión?</p>
 							 		</div><!-- /Col 2/3 -->
 							 		<div class="four columns"><!-- Col 3/3 -->
 							 		<h5 class="text-center greytxt no-margin txt-shadow-white"><strong><span class="orangetxt">&#8226;</span> Otros ingresos</strong></h5>
@@ -351,7 +351,7 @@ if (!isset($userData['user_income_representation']))
 											    <td><a class="more-than round-right" aria-hidden="true" data-icon="&#x3b;"></a></td>
 											</tr>
 										</table>
-							 		<p class="text-center small">Si tienes otros ingresos diferentes a sueldo o pensión, ¿Cúanto suman?.</p>
+							 		<p class="text-center small">Si tienes otros ingresos diferentes a sueldo o pensión, ¿Cuánto suman?.</p>
 							 		</div><!-- /Col 3/3 -->
 							 	</div><!-- /Row Result -->
 						 	</div><!-- Ingresos -->
@@ -400,7 +400,7 @@ if (!isset($userData['user_income_representation']))
 							 		<p class="text-center small">¿Cuánto pagas en promedio cada mes por tu crédito rotativo y/o tarjeta de crédito?</p>
 							 		</div><!-- /Col 4/4 -->                                
 							 		<div class="three columns"><!-- Col 1/4 -->
-							 		<h5 class="text-center greytxt no-margin txt-shadow-white"><strong><span class="orangetxt">&#8226;</span> Créditos</strong></h5>
+							 		<h5 class="text-center greytxt no-margin txt-shadow-white"><strong><span class="orangetxt">&#8226;</span>Otros créditos</strong></h5>
 							 			<table class="blank-table">
 											<tr>
 											    <td><a class="less-than round-left" aria-hidden="true" data-icon="&#x6c;"></a></td>
@@ -408,7 +408,7 @@ if (!isset($userData['user_income_representation']))
 											    <td><a class="more-than round-right" aria-hidden="true" data-icon="&#x3b;"></a></td>
 											</tr>
 										</table>
-							 		<p class="text-center small">¿Cuál es el valor de los pagos que realizaste el mes pasado por tus créditos con entidades financieras?</p>
+							 		<p class="text-center small">¿Cuánto pagaste en promedio cada mes por créditos con entidades financieras, familiares, amigos u otros?</p>
 							 		</div><!-- /Col 1/4 -->
 							 		<div class="three columns"><!-- Col 2/4 -->
 							 		<h5 class="text-center greytxt no-margin txt-shadow-white"><strong><span class="aquatxt">&#8226;</span> Otros prestamos</strong></h5>
@@ -445,7 +445,7 @@ if (!isset($userData['user_income_representation']))
 							 	
 <div class="row"><!-- Row Result -->
 							 		<div class="four columns"><!-- Col 1/3 -->
-							 		<h5 class="text-center greytxt no-margin txt-shadow-white"><strong><span class="bluetxt">&#8226;</span> Servicios públicos</strong></h5>
+							 		<h5 class="text-center greytxt no-margin txt-shadow-white"><strong><span class="bluetxt">&#8226;</span> Pagos recurrentes</strong></h5>
 							 			<table class="blank-table">
 											<tr>
 											    <td><a class="less-than round-left" aria-hidden="true" data-icon="&#x6c;"></a></td>
@@ -467,7 +467,7 @@ if (!isset($userData['user_income_representation']))
 							 		<p class="text-center small">¿Cuánto suman los gastos mensuales que tienes que hacer por el resto de cosas sin incluir ahorros? (comida, transporte, vestuario, hogar, arriendo y diversión, etc.)</p>
 							 		</div><!-- /Col 2/3 -->
 							 		<div class="four columns"><!-- Col 3/3 -->
-							 		<h5 class="text-center greytxt no-margin txt-shadow-white"><strong><span class="orangetxt">&#8226;</span> Ahorro</strong></h5>
+							 		<h5 class="text-center greytxt no-margin txt-shadow-white"><strong><span class="orangetxt">&#8226;</span> Ahorros planeados</strong></h5>
 							 			<table class="blank-table">
 											<tr>
 											    <td><a class="less-than round-left" aria-hidden="true" data-icon="&#x6c;"></a></td>
@@ -504,7 +504,7 @@ if (!isset($userData['user_income_representation']))
 								 	</div>
 								 	
 								 	<div class="four columns">
-								 		<h5><strong class="greytxt no-margin txt-shadow-white">POSIBILIDAD DE AHORRO</strong></h5>
+								 		<h5><strong class="greytxt no-margin txt-shadow-white">POSIBILIDAD ADICIONAL DE AHORRO</strong></h5>
 								 		<h3 class="greentxt resultado">$345,324.905</h3>
 								 	</div>
 						 		</div>
@@ -558,5 +558,9 @@ $(document).ready(function ()
 <?php	
 include_once('footer.php');	
 ?>
+<?php	
+	
+	include_once('menu-script.php');
+	?>
 </body>
 </html>
