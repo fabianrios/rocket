@@ -1485,7 +1485,7 @@ a:hover span.menu-sobres { background: url(../images/sprite-01.png) no-repeat -8
  
 .TimeLine-block {	background: url(../images/shadow-05.png) no-repeat left center;	width: 30%;	height: 680px; }		.TimeLine-block2 {	background: url(../images/shadow-05.png) no-repeat left center;	width: 30%;	height: 680px; }	
  
-.TimeLine { position: relative; }
+.TimeLine { position: relative; left: 35px; }
  
 .TimeLine-bar {	position: absolute;	left: 35%;	display: table;	border-left: 5px solid #bbbbbb;	height: 600px;	margin-top: 30px;	margin-bottom: 20px;} 
  
@@ -3594,7 +3594,7 @@ h4.sobre-value.blue {
 
 
 .goal-16-small img {
-	width: 50px;
+	width: 55px;
 	height: auto; }
  
 .goal-small {
